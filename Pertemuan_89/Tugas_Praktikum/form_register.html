@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Register</title>
+</head>
+<body>
+	REGISTER
+	<form action="aksi_registrasi.php" method="POST">
+		<table>
+			<tr>
+				<td>Username :</td>
+				<td><input type="text" name="username"></td>
+			</tr>
+			<tr>
+				<td>Password :</td>
+				<td><input type="Password" name="password"></td>
+			</tr>
+			<tr>
+				<td>Ulangi Password :</td>
+				<td><input type="Password" name="ulangi_password"></td>
+			</tr>
+			<tr>
+				<td>Level :</td>
+				<td>
+					<select name="level">
+						<option value="Admin">Admin</option>
+						<option value="Pengguna">Pengguna</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="submit" value="Register"> | <input type="reset" name="reset"></td>
+			</tr>
+		</table>
+	</form>	
+	<br><br>
+	[<a href="form_login.html">kembali</a>]
+</body>
+</html>
