@@ -4,6 +4,8 @@
 	<title>Test Gejala</title>
 </head>
 <body>
+	[<a href="form_gejala.html">Tambah Gejala/Resiko</a>]
+	<br><br>
 	<form action="act_ngetest.php" method="POST">
 		<table>
 			<tr>
@@ -17,7 +19,7 @@
 			<tbody>
 				<?php
 					include "koneksi.php";
-					$sql = "SELECT * FROM gejala";
+					$sql = "SELECT * FROM gejala GROUP BY kode";
 					$a = $koneksi->query($sql);
 
 					while ($c = $a->fetch_array()) {

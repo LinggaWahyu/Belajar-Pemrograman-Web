@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Input Gejala/Resiko</title>
+</head>
+<body>
+	<h2>Form Input Gejala/Resiko</h2>
+	<form action="act_gejala.php" method="POST">
+		<table>
+			<tr>
+				<td>Kode Gejala/Resiko :</td>
+				<td><input type="text" name="kode"></td>
+			</tr>
+			<tr>
+				<td>Nama Gejala/Resiko :</td>
+				<td><input type="text" name="nama_gejala"></td>
+			</tr>
+			<tr>
+				<td>Keterangan :</td>
+				<td><textarea name="keterangan"></textarea></td>
+			</tr>
+			<tr>
+				<td>Jenis :</td>
+				<td>
+					<select name="jenis">
+						<option value="Gejala">Gejala</option>
+						<option value="Resiko">Resiko</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="submit" value="Input"></td>
+				<td><input type="reset" name="reset"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
