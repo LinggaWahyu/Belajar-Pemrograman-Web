@@ -2,8 +2,9 @@
 	include "koneksi.php";
 	$nama_barang = $_POST['nama_barang'];
 	$stok_awal = $_POST['stok_awal'];
+	$harga = $_POST['harga'];
 
-	$sql = "INSERT INTO barang VALUES (null, '" . $nama_barang . "', " . $stok_awal . ")";
+	$sql = "INSERT INTO barang VALUES (null, '" . $nama_barang . "', " . $stok_awal . ", '" . $harga . "')";
 
 	$a = $koneksi->query($sql);
 

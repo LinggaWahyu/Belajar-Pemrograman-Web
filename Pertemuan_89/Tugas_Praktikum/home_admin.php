@@ -11,6 +11,7 @@
 		<title>Home Admin</title>
 	</head>
 	<body>
+		[<a href="aksi_logout.php">Logout</a>]
 		<table>
 			<tr>
 				<td width="330px">
@@ -24,6 +25,10 @@
 							<tr>
 								<td>Stok Awal :</td>
 								<td><input type="text" name="stok_awal"></td>
+							</tr>
+							<tr>
+								<td>Harga :</td>
+								<td><input type="text" name="harga"></td>
 							</tr>
 							<tr>
 								<td><input type="submit" name="submit" value="Simpan"></td>
@@ -96,76 +101,9 @@
 						</tbody>
 					</table>
 				</td>
-				<td valign="top">
-					<p><b>Info Data Pembelian</b></p>
-					<table border="1">
-						<tr>
-							<thead>
-								<th>Id Pembelian</th>
-								<th>Id User</th>
-								<th>Tanggal</th>
-								<th>Nama Barang</th>
-								<th>Jumlah Barang</th>
-							</thead>
-						</tr>
-						<tbody>
-							<?php
-								include "koneksi.php";
-								$sql = "SELECT * FROM data_pembelian NATURAL JOIN barang";
-								$a = $koneksi->query($sql);
-
-								while ($c = $a->fetch_array()) {
-							?>
-								<tr>
-									<td><?php echo $c['id_pembelian']; ?></td>
-									<td><?php echo $c['id_user']; ?></td>
-									<td><?php echo $c['tanggal']; ?></td>
-									<td><?php echo $c['nama_barang']; ?></td>
-									<td><?php echo $c['jumlah']; ?></td>
-								</tr>
-							<?php		
-								}
-							?>
-						</tbody>
-					</table>
-				</td>
-				<td valign="top">
-					<p><b>Info Data Penjualan</b></p>
-					<table border="1">
-						<tr>
-							<thead>
-								<th>Id Penjualan</th>
-								<th>Id User</th>
-								<th>Tanggal</th>
-								<th>Nama Barang</th>
-								<th>Jumlah Barang</th>
-							</thead>
-						</tr>
-						<tbody>
-							<?php
-								include "koneksi.php";
-								$sql = "SELECT * FROM data_penjualan NATURAL JOIN barang";
-								$a = $koneksi->query($sql);
-
-								while ($c = $a->fetch_array()) {
-							?>
-								<tr>
-									<td><?php echo $c['id_penjualan']; ?></td>
-									<td><?php echo $c['id_user']; ?></td>
-									<td><?php echo $c['tanggal']; ?></td>
-									<td><?php echo $c['nama_barang']; ?></td>
-									<td><?php echo $c['jumlah']; ?></td>
-								</tr>
-							<?php		
-								}
-							?>
-						</tbody>
-					</table>
-				</td>
 			</tr>
 		</table>
 		<br><br>
-		[<a href="aksi_logout.php">Logout</a>]
 	</body>
 	</html>
 <?php		
