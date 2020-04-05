@@ -26,22 +26,26 @@
 			}
 		}
 		if ($nilai_fuzzy == 100) {
-			$kategori = "Positif Covid-19";
+			$kategori = "Positif";
 		} else if ($nilai_fuzzy < 100 && $nilai_fuzzy >= 80) {
-			$kategori = "Positif Covid-19";
+			$kategori = "Positif";
 		} else if ($nilai_fuzzy < 80 && $nilai_fuzzy >= 60) {
-			$kategori = "PDP Covid-19";
+			$kategori = "PDP";
 		} else if ($nilai_fuzzy < 60 && $nilai_fuzzy >= 40) {
-			$kategori = "ODP Covid-19"; 
+			$kategori = "ODP"; 
 		} else if ($nilai_fuzzy < 40 && $nilai_fuzzy >= 20) {
-			$kategori = "ODR Covid-19"; 
+			$kategori = "ODR"; 
 		} else if ($nilai_fuzzy < 20 && $nilai_fuzzy >= 0) {
-			$kategori = "Negatif Covid-19";
+			$kategori = "Negatif";
 		} else {
-			$kategori = "Negatif Covid-19";
+			$kategori = "Negatif";
 		}
 
-		echo "Anda masuk dalam kategori <b>$kategori</b>";
+		echo "Anda masuk dalam kategori <b>$kategori Covid-19</b>";
+
+		$id = $_SESSION['id'];
+		$sql3 = "UPDATE markers SET type = '" . $kategori . "' WHERE id = " . $id;
+		$d = $koneksi->query($sql3);
 	}
 ?>
 <!DOCTYPE html>
@@ -52,5 +56,6 @@
 <body>
 	<br><br>
 	[<a href="form_pasien.html">Home</a>]
+	[<a href="cek_persebaran.php">Cek Persebaran</a>]
 </body>
 </html>

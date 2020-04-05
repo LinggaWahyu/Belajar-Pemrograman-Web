@@ -23,8 +23,8 @@
 	    $real_ip_adress = $_SERVER['REMOTE_ADDR'];
 	}
 
-	$ip_address = $real_ip_adress;
-    // $ip_address = "114.125.81.90";
+	// $ip_address = $real_ip_adress;
+    $ip_address = "36.74.200.83";
     //get user ip address details with geoplugin.net
     $link = "https://www.iplocate.io/api/lookup/" . $ip_address;
     $addrDetailsArr = json_decode(file_get_contents($link), true);
@@ -52,6 +52,7 @@
      	$b = $koneksi->query($sql2);
      	$c = $b->fetch_array();
      	$id = $c['MAX(id)'];
+        $_SESSION['id'] = $id;
 
      	$sql3 = "INSERT INTO pasien VALUES (null, " . $id . ", '" . $nama_pasien . "', " . $usia . ", '". $jk ."', '". $tgllahir . "', '" . $telepon . "')";
      	$d = $koneksi->query($sql3);
@@ -66,8 +67,9 @@
 				alert('Input Pasien Sukses');
 				window.location.href = 'home_test_gejala.php';
 			</script>";
-     	} else
+     	} else {
      	echo "Error 1";
+     }
     } else {
     	echo "Error 2";
     }
