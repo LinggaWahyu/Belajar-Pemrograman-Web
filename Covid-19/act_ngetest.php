@@ -9,7 +9,7 @@
 		$a = $koneksi->query($sql1);
 		$b = $a->fetch_array();
 		$banyak = $b['COUNT(idgejala)'];
-		$nilai = (int)100 / $banyak;
+		$nilai = round(100 / $banyak);
 		$nilai_fuzzy = 0;
 		$kategori;
 		for ($i=1; $i <= $banyak; $i++) { 
@@ -25,15 +25,19 @@
 				$nilai_fuzzy += $nilai;
 			}
 		}
-		if ($nilai_fuzzy = 100) {
+		if ($nilai_fuzzy == 100) {
 			$kategori = "Positif Covid-19";
 		} else if ($nilai_fuzzy < 100 && $nilai_fuzzy >= 80) {
 			$kategori = "Positif Covid-19";
 		} else if ($nilai_fuzzy < 80 && $nilai_fuzzy >= 60) {
 			$kategori = "PDP Covid-19";
-		} else if ($nilai_fuzzy < 60 && $nilai_fuzzy >= 20) {
+		} else if ($nilai_fuzzy < 60 && $nilai_fuzzy >= 40) {
 			$kategori = "ODP Covid-19"; 
+		} else if ($nilai_fuzzy < 40 && $nilai_fuzzy >= 20) {
+			$kategori = "ODR Covid-19"; 
 		} else if ($nilai_fuzzy < 20 && $nilai_fuzzy >= 0) {
+			$kategori = "Negatif Covid-19";
+		} else {
 			$kategori = "Negatif Covid-19";
 		}
 
