@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css"> 
+
+    <!-- My CSS -->
+    <style>
+      section {
+        min-height: 250px;
+      }
+    </style>
+
+    <link rel="icon" href="img/icon.png">
+	<title>PPDB Madrasah ABC</title>
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <header style="text-align: center;">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h2>Selamat Datang di PPDB Online Madrasah ABC</h2>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="row">
+            <div class="col-md-4">
+            <h3 class="text-center title-login">Daftar Akun</h3>
+
+            <form action="aksi_registrasi.php" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="nama_lengkap" placeholder="Nama Lengkap" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="ulangi_password" placeholder="Ulangi Password" required>
+                </div>
+                <input type="submit" class="btn btn-success btn-block" value="Daftar" name="daftar">
+                <div class="text-center">
+                    <p>Sudah punya akun ? <a href="index.html">Login</a></p>
+                </div>
+            </form>
+            </div>
+            <div class="col-md-4">
+                <img class="img img-responsive" src="img/madrasah.jpeg" width="209%" />
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 30px">
+            <p>Copyright &#169; 2020 by <a href="http://linggawahyu.github.io" target="_blank">Lingga Wahyu Rochim</a></p>
+        </div>        
+    </div>
+
+	<script src="assets/js/jquery.js"></script> 
+    <script src="assets/js/popper.js"></script> 
+    <script src="assets/js/bootstrap.js"></script>
+</body>
+</html>
